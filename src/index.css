@@ -5,9 +5,82 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.playerCard {
+  padding: 20px;
+  margin: 10px 10px;
+  width: 220px;
+  height: 300px;
+  background-color: rgba(0,0,0, 0.1)
+}
+
+.resultCard {
+  width: 400px;
+  height: 100px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.resultCard button {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(0,0,0, 0.1);
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.space-around {
+  justify-content: space-around
+}
+
+.avatar {
+  border-radius: 50%
+}
+
+.center-text {
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+img {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+}
+
+
+

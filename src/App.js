@@ -3,7 +3,11 @@ import "./App.css";
 import PlayerDuel from "./components/PlayerDuel";
 
 function App() {
-  return <PlayerDuel />;
+  return (
+    <div className="container">
+      <PlayerDuel />
+    </div>
+  );
 }
 
 export default App;

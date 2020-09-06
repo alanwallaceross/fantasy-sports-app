@@ -8,7 +8,6 @@ import Card from "./Card";
 
 export default function PlayerDuel() {
   const [allPlayers, setAllPlayers] = React.useState([]);
-  const [currentPlayers, setCurrentPlayers] = React.useState([]);
   const [loading, setLoading] = React.useState([]);
   const [error, setError] = React.useState(null);
   const [count, setCount] = React.useState(0);
@@ -18,6 +17,7 @@ export default function PlayerDuel() {
 
   let selectedPlayer = React.useRef({ name: "", fppg: 0 });
   let highestCurrentFPPG = React.useRef(0);
+  let currentPlayersRef = React.useRef(null);
 
   React.useEffect(() => {
     setLoading(true);
@@ -26,7 +26,6 @@ export default function PlayerDuel() {
         setAllPlayers(players);
         setLoading(false);
         setError(null);
-        setCurrentPlayers(get3RandomPlayers(players));
       })
       .catch(err => {
         setError(
@@ -36,9 +35,12 @@ export default function PlayerDuel() {
   }, []);
 
   React.useEffect(() => {
-    highestCurrentFPPG.current = getHighestFPPG(currentPlayers);
-    console.log(highestCurrentFPPG.current);
-  }, [currentPlayers]);
+    currentPlayersRef.current = get3RandomPlayers(allPlayers);
+  }, [allPlayers]);
+
+  React.useEffect(() => {
+    highestCurrentFPPG.current = getHighestFPPG(currentPlayersRef.current);
+  });
 
   const handleSelectPlayer = (fppg, name) => {
     setCount(count => count + 1);
@@ -56,7 +58,7 @@ export default function PlayerDuel() {
   const handleNext = () => {
     setHasGuessed(false);
     setIsCorrectGuess(false);
-    setCurrentPlayers(get3RandomPlayers(allPlayers));
+    currentPlayersRef.current = get3RandomPlayers(allPlayers);
   };
 
   const handleReset = () => {
@@ -64,7 +66,7 @@ export default function PlayerDuel() {
     setCount(0);
     setHasGuessed(false);
     setIsCorrectGuess(false);
-    setCurrentPlayers(get3RandomPlayers(allPlayers));
+    currentPlayersRef.current = get3RandomPlayers(allPlayers);
   };
 
   if (loading === true) {
@@ -93,7 +95,7 @@ export default function PlayerDuel() {
           </div>
         </Card>
         <PlayerGrid
-          players={currentPlayers}
+          players={currentPlayersRef.current}
           handleSelectPlayer={handleSelectPlayer}
           hasGuessed={hasGuessed}
         />

@@ -4,6 +4,7 @@ export async function getPlayers() {
   );
   try {
     const { players } = await response.json();
+    //filter out players who have a null or undefined fppg value
     let playersWithFPPG = players.filter(player => player.fppg);
     return playersWithFPPG;
   } catch (err) {

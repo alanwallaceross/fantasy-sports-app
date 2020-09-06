@@ -13,7 +13,6 @@ export function get3RandomPlayers(players) {
 }
 
 export function getHighestFPPG(players) {
-  console.log(players);
   if (players && players.length > 0) {
     let highestFPPG = 0;
     for (let player in players) {

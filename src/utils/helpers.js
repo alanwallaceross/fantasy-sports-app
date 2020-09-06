@@ -1,5 +1,5 @@
 export function get3RandomPlayers(players) {
-  if (players && players.length > 0) {
+  if (players && players.length >= 3) {
     let playerArray = [...players];
     let randomPlayers = [];
     for (let i = 0; i < 3; i++) {
@@ -13,7 +13,7 @@ export function get3RandomPlayers(players) {
 }
 
 export function getHighestFPPG(players) {
-  if (players && players.length > 0) {
+  if (players && players.length >= 3) {
     let highestFPPG = 0;
     for (let player in players) {
       if (players[player].fppg > highestFPPG) {

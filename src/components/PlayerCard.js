@@ -7,12 +7,13 @@ export default function PlayerCard({
   fppg,
   handleSelectPlayer,
   hasGuessed,
-  isFinished,
+  id,
 }) {
   return (
     <Card>
       <div className="playerCard">
         <button
+          data-testid={`character-${id}`}
           className="center-text"
           onClick={() => handleSelectPlayer(fppg, name)}
           disabled={hasGuessed}

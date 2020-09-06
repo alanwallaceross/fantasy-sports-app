@@ -2,12 +2,13 @@ import React from "react";
 import PlayerCard from "./PlayerCard";
 
 const PlayerGrid = ({ players, handleSelectPlayer, hasGuessed }) => {
-  if (players && players.length > 0) {
+  if (players && players.length >= 3) {
     return (
       <ul className="grid space-around">
         {players.map(player => (
           <li key={player.id}>
             <PlayerCard
+              id={player.id}
               avatar={player.images.default.url}
               name={`${player.first_name} ${player.last_name}`}
               fppg={player.fppg}
@@ -19,7 +20,7 @@ const PlayerGrid = ({ players, handleSelectPlayer, hasGuessed }) => {
       </ul>
     );
   } else {
-    return "No players";
+    return "Not enough players";
   }
 };
 

@@ -9,7 +9,7 @@ const Results = props => {
           {props.resultText}
           <br />
           {props.isFinished ? (
-            <button onClick={props.handleReset}>Reset game</button>
+            <button onClick={props.handleReset}>Reset Game</button>
           ) : (
             <button onClick={props.handleNext}>Next Guess</button>
           )}

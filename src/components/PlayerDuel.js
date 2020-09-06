@@ -85,7 +85,7 @@ export default function PlayerDuel() {
         <p>
           Instructions: Try and select the players who you think have the
           highest FFPG (Fantasy points per game) in as few rounds as possible.
-          Game ends once you have made 10 correct guesses.{" "}
+          Game ends once you have made 10 correct guesses.
         </p>
         <Card>
           <div className="center center-text">

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import PlayerCard from "./PlayerCard";
 
@@ -5,7 +6,7 @@ const PlayerGrid = ({ players, handleSelectPlayer, hasGuessed }) => {
   if (players && players.length >= 3) {
     return (
       <ul className="grid space-around">
-        {players.map(player => (
+        {players.map((player) => (
           <li key={player.id}>
             <PlayerCard
               id={player.id}
@@ -22,6 +23,12 @@ const PlayerGrid = ({ players, handleSelectPlayer, hasGuessed }) => {
   } else {
     return "Not enough players";
   }
+};
+
+PlayerGrid.propTypes = {
+  handleSelectPlayer: PropTypes.func.isRequired,
+  hasGuessed: PropTypes.bool.isRequired,
+  players: PropTypes.array,
 };
 
 export default PlayerGrid;

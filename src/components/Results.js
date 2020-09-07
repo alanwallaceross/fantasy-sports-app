@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import React from "react";
 import Card from "./Card";
 
-const Results = props => {
+const Results = (props) => {
   if (props.hasGuessed) {
     return (
       <Card>
@@ -19,6 +20,14 @@ const Results = props => {
   } else {
     return <Card></Card>;
   }
+};
+
+Results.propTypes = {
+  handleNext: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
+  hasGuessed: PropTypes.bool.isRequired,
+  isFinished: PropTypes.bool.isRequired,
+  resultText: PropTypes.string.isRequired,
 };
 
 export default Results;

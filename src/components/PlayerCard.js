@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import Card from "./Card";
 
@@ -26,3 +27,12 @@ export default function PlayerCard({
     </Card>
   );
 }
+
+PlayerCard.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  fppg: PropTypes.number.isRequired,
+  handleSelectPlayer: PropTypes.func.isRequired,
+  hasGuessed: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};

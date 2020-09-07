@@ -22,12 +22,12 @@ export default function PlayerDuel() {
   React.useEffect(() => {
     setLoading(true);
     getPlayers()
-      .then(players => {
+      .then((players) => {
         setAllPlayers(players);
         setLoading(false);
         setError(null);
       })
-      .catch(err => {
+      .catch((err) => {
         setError(
           "Sorry for the inconvenience, there has been an error retrieving player info. Please try again later."
         );
@@ -43,13 +43,13 @@ export default function PlayerDuel() {
   });
 
   const handleSelectPlayer = (fppg, name) => {
-    setCount(count => count + 1);
+    setCount((count) => count + 1);
     selectedPlayer.current.name = name;
     selectedPlayer.current.fppg = fppg;
     if (fppg >= highestCurrentFPPG.current) {
       setHasGuessed(true);
       setIsCorrectGuess(true);
-      setCorrectGuesses(correctGuesses => correctGuesses + 1);
+      setCorrectGuesses((correctGuesses) => correctGuesses + 1);
     } else {
       setHasGuessed(true);
     }

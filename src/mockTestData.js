@@ -235,4 +235,37 @@ export const mockPlayerJSON = [
       _ref: "teams.id",
     },
   },
+  {
+    first_name: "Lucas",
+    fixture: {
+      _members: ["112164"],
+      _ref: "fixtures.id",
+    },
+    fppg: 5.782758620689655,
+    id: "15475-40200",
+    images: {
+      default: {
+        height: 200,
+        url: "https://d17odppiik753x.cloudfront.net/playerimages/nba/40200.png",
+        width: 200,
+      },
+    },
+    injured: false,
+    injury_details: null,
+    injury_status: null,
+    last_name: "Nogueira",
+    news: {
+      latest: "2016-04-13T23:18:38Z",
+    },
+    played: 29,
+    player_card_url: "https://www.fanduel.com/e/Player/40200/Stats/15475",
+    position: "C",
+    removed: false,
+    salary: 3500,
+    starting_order: null,
+    team: {
+      _members: ["706"],
+      _ref: "teams.id",
+    },
+  },
 ];

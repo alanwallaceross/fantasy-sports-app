@@ -15,12 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ignore-path .gitignore --ext .js .",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
-    "validate": "npm-run-all --parallel lint prettier"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\""
   },
   "browserslist": {
     "production": [
@@ -35,8 +30,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.8.1",
-    "eslint-config-prettier": "^6.11.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.1"
   }

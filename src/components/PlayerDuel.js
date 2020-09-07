@@ -28,6 +28,7 @@ export default function PlayerDuel() {
         setError(null);
       })
       .catch((err) => {
+        setLoading(false);
         setError(
           "Sorry for the inconvenience, there has been an error retrieving player info. Please try again later."
         );
